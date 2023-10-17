@@ -1,0 +1,45 @@
+.sproxel-background {
+  width: 400px;
+  height: 400px;
+  left: 0;
+  top: 0;
+}
+
+.sproxel-background .sproxel-segment {
+  width: 400px;
+  height: 40px;
+}
+
+.sproxel-background .sproxel-element {
+  width: 40px;
+  height: 40px;
+}
+
+.sproxel-background .sproxel-wall {
+  width: 40px;
+  height: 40px;
+}
+
+.sproxel-background .sproxel-top {
+  transform: translate3d(0, 0, 20px) rotate3d(0, 0, 1, 0);
+}
+
+.sproxel-background .sproxel-bottom {
+  transform: translate3d(0, 0, -20px) rotate3d(1, 0, 0, 180deg);
+}
+
+.sproxel-background .sproxel-front {
+  transform: translate3d(0, 20px, 0) rotate3d(1, 0, 0, -90deg);
+}
+
+.sproxel-background .sproxel-back {
+  transform: translate3d(0, -20px, 0) rotate3d(1, 0, 0, 90deg);
+}
+
+.sproxel-background .sproxel-left {
+  transform: translate3d(-20px, 0, 0) rotate3d(0, 1, 0, -90deg);
+}
+
+.sproxel-background .sproxel-right {
+  transform: translate3d(20px, 0, 0) rotate3d(0, 1, 0, 90deg);
+}

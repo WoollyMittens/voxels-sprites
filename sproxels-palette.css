@@ -1,0 +1,135 @@
+/* red */
+
+.sproxel-palette-1 .sproxel-top,
+.sproxel-palette-1 .sproxel-bottom {
+  background-color: #c00;
+}
+.sproxel-palette-1 .sproxel-front,
+.sproxel-palette-1 .sproxel-back {
+  background-color: #900;
+}
+.sproxel-palette-1 .sproxel-left,
+.sproxel-palette-1 .sproxel-right {
+  background-color: #600;
+}
+
+/* green */
+
+.sproxel-palette-2 .sproxel-top,
+.sproxel-palette-2 .sproxel-bottom {
+  background-color: #0c0;
+}
+.sproxel-palette-2 .sproxel-front,
+.sproxel-palette-2 .sproxel-back {
+  background-color: #090;
+}
+.sproxel-palette-2 .sproxel-left,
+.sproxel-palette-2 .sproxel-right {
+  background-color: #060;
+}
+
+/* blue */
+
+.sproxel-palette-3 .sproxel-top,
+.sproxel-palette-3 .sproxel-bottom {
+  background-color: #00c;
+}
+.sproxel-palette-3 .sproxel-front,
+.sproxel-palette-3 .sproxel-back {
+  background-color: #009;
+}
+.sproxel-palette-3 .sproxel-left,
+.sproxel-palette-3 .sproxel-right {
+  background-color: #006;
+}
+
+
+/* yellow */
+
+.sproxel-palette-4 .sproxel-top,
+.sproxel-palette-4 .sproxel-bottom {
+  background-color: #cc0;
+}
+.sproxel-palette-4 .sproxel-front,
+.sproxel-palette-4 .sproxel-back {
+  background-color: #990;
+}
+.sproxel-palette-4 .sproxel-left,
+.sproxel-palette-4 .sproxel-right {
+  background-color: #660;
+}
+
+/* magento */
+
+.sproxel-palette-5 .sproxel-top,
+.sproxel-palette-5 .sproxel-bottom {
+  background-color: #c0c;
+}
+.sproxel-palette-5 .sproxel-front,
+.sproxel-palette-5 .sproxel-back {
+  background-color: #909;
+}
+.sproxel-palette-5 .sproxel-left,
+.sproxel-palette-5 .sproxel-right {
+  background-color: #606;
+}
+
+/* cyan */
+
+.sproxel-palette-6 .sproxel-top,
+.sproxel-palette-6 .sproxel-bottom {
+  background-color: #0cc;
+}
+.sproxel-palette-6 .sproxel-front,
+.sproxel-palette-6 .sproxel-back {
+  background-color: #099;
+}
+.sproxel-palette-6 .sproxel-left,
+.sproxel-palette-6 .sproxel-right {
+  background-color: #066;
+}
+
+/* black */
+
+.sproxel-palette-7 .sproxel-top,
+.sproxel-palette-7 .sproxel-bottom {
+  background-color: #999;
+}
+.sproxel-palette-7 .sproxel-front,
+.sproxel-palette-7 .sproxel-back {
+  background-color: #666;
+}
+.sproxel-palette-7 .sproxel-left,
+.sproxel-palette-7 .sproxel-right {
+  background-color: #333;
+}
+
+/* gray */
+
+.sproxel-palette-8 .sproxel-top,
+.sproxel-palette-8 .sproxel-bottom {
+  background-color: #ccc;
+}
+.sproxel-palette-8 .sproxel-front,
+.sproxel-palette-8 .sproxel-back {
+  background-color: #999;
+}
+.sproxel-palette-8 .sproxel-left,
+.sproxel-palette-8 .sproxel-right {
+  background-color: #666;
+}
+
+/* white */
+
+.sproxel-palette-9 .sproxel-top,
+.sproxel-palette-9 .sproxel-bottom {
+  background-color: #fff;
+}
+.sproxel-palette-9 .sproxel-front,
+.sproxel-palette-9 .sproxel-back {
+  background-color: #ccc;
+}
+.sproxel-palette-9 .sproxel-left,
+.sproxel-palette-9 .sproxel-right {
+  background-color: #999;
+}

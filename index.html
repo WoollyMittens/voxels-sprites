@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CSS3 Sproxels Experiment.</title>
+  <link rel="stylesheet" href="./sproxels-space.css" />
+  <link rel="stylesheet" href="./sproxels-palette.css" />
+  <link rel="stylesheet" href="./sproxels-sprite.css" />
+  <link rel="stylesheet" href="./sproxels-background.css" />
+  <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width" />
+  <script src="sproxels.js"></script>
+  <script src="sproxels-background.js"></script>
+  <script src="sproxels-sprite.js"></script>
+</head>
+
+<body>
+  <div class="sproxel-space"></div>
+  <script>
+    /*
+      configure sproxels
+    */
+    var sproxels = new Sproxels({
+      'space': document.querySelector('.sproxel-space'),
+      'background': {
+        'position': [0,0,-0.5],
+        'size': 40,
+        'geometry': [
+          {'x':+0.0, 'y':+0.0, 'z':[2,2,2,2,8,8,2,2,2,2]},
+          {'x':-0.1, 'y':+0.0, 'z':[2,2,2,2,8,8,2,2,2,2]},
+          {'x':-0.2, 'y':+0.0, 'z':[2,2,2,2,8,8,2,2,2,2]},
+          {'x':-0.3, 'y':+0.1, 'z':[2,2,2,2,8,8,2,2,2,2]},
+          {'x':-0.2, 'y':+0.2, 'z':[2,2,2,2,8,8,2,2,2,2]},
+          {'x':-0.1, 'y':+0.3, 'z':[2,2,2,2,8,8,2,2,2,2]},
+          {'x':+0.0, 'y':+0.2, 'z':[2,2,2,2,8,8,2,2,2,2]},
+          {'x':+0.0, 'y':+0.1, 'z':[2,2,2,2,8,8,2,2,2,2]},
+          {'x':+0.0, 'y':+0.0, 'z':[2,2,2,2,8,8,2,2,2,2]},
+          {'x':+0.0, 'y':+0.0, 'z':[2,2,2,2,8,8,2,2,2,2]}
+        ]
+      },
+      'sprites': [{
+        'position': [20,24,0],
+        'rotation': [0,0,30],
+        'size': 10,
+        'geometry': [
+          [[1,1,1,1],[1,0,0,1],[1,0,0,1],[1,1,1,1]],
+          [[1,0,0,1],[0,6,6,0],[0,6,6,0],[1,0,0,1]],
+          [[1,0,0,1],[0,6,6,0],[0,6,6,0],[1,0,0,1]],
+          [[1,1,1,1],[1,0,0,1],[1,0,0,1],[1,1,1,1]]
+        ]
+      }]
+    });
+    /*
+      example redraw loop
+    */
+    var example = {
+      'offset': 0,
+      'previousSegment': 0,
+      'previousSpeed': 1,
+      'previousProgress': 0,
+      'previousTime': new Date().getTime(),
+      'animationFrame': null,
+      'animationLoop': function() {
+        // cancel a pending frame
+        cancelAnimationFrame(this.animationFrame);
+        // calculate progress
+        var time = new Date().getTime();
+        var interval = (time - this.previousTime) / 1000;
+        var progress = this.previousProgress + (this.previousSpeed * interval);
+        var segment = parseInt(progress);
+        // apply background animation
+        if (segment > this.previousSegment) sproxels.cfg.background.geometry.unshift(sproxels.cfg.background.geometry.pop());
+        sproxels.cfg.background.position[1] = progress % 1 - this.offset;
+        // apply sprite animation
+        var relativeSegment = sproxels.cfg.background.geometry.length - 5;
+        var relativeSize = sproxels.cfg.background.size / sproxels.cfg.sprites[0].size;
+        sproxels.cfg.sprites[0].position[2] = sproxels.cfg.background.geometry[relativeSegment].y * relativeSize + 0.5;
+        sproxels.cfg.sprites[0].rotation[2] += 1;
+        sproxels.redraw();
+        // request next frame
+        this.animationFrame = requestAnimationFrame(this.animationLoop.bind(this));
+        // update the current values
+        this.previousProgress = progress;
+        this.previousTime = time;
+        this.previousSegment = segment;
+      }
+    };
+    example.animationLoop();
+  </script>
+  <button onclick="sproxels.cfg.sprites[0].position[0]-=1">W</button>
+  <button onclick="sproxels.cfg.sprites[0].position[0]+=1">E</button>
+  <button onclick="sproxels.cfg.sprites[0].position[1]-=1">N</button>
+  <button onclick="sproxels.cfg.sprites[0].position[1]+=1">S</button>
+</body>
+
+</html>

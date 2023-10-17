@@ -1,0 +1,40 @@
+.sproxel-sprite {
+  width: 40px;
+  height: 40px;
+  left: -20px;
+  top: -20px;
+}
+
+.sproxel-sprite .sproxel-element {
+  width: 10px;
+  height: 10px;
+}
+
+.sproxel-sprite .sproxel-wall {
+  width: 10px;
+  height: 10px;
+}
+
+.sproxel-sprite .sproxel-top {
+  transform: translate3d(0, 0, 5px) rotate3d(0, 0, 1, 0);
+}
+
+.sproxel-sprite .sproxel-bottom {
+  transform: translate3d(0, 0, -5px) rotate3d(1, 0, 0, 180deg);
+}
+
+.sproxel-sprite .sproxel-front {
+  transform: translate3d(0, 5px, 0) rotate3d(1, 0, 0, -90deg);
+}
+
+.sproxel-sprite .sproxel-back {
+  transform: translate3d(0, -5px, 0) rotate3d(1, 0, 0, 90deg);
+}
+
+.sproxel-sprite .sproxel-left {
+  transform: translate3d(-5px, 0, 0) rotate3d(0, 1, 0, -90deg);
+}
+
+.sproxel-sprite .sproxel-right {
+  transform: translate3d(5px, 0, 0) rotate3d(0, 1, 0, 90deg);
+}

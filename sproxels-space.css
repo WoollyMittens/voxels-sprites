@@ -1,0 +1,38 @@
+.sproxel-space {
+  position: relative;
+  overflow: hidden;
+  border: solid 1px #000;
+  width: 400px;
+  height: 400px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  perspective-origin: center;
+  box-sizing: border-box;
+}
+
+.sproxel-space * {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+}
+
+.sproxel-plane {
+  transform: translate3d(0, 0, 0) rotate3d(1, 0, 0, 60deg) rotate3d(0, 0, 1, 45deg);
+  animation: pan 5s ease-in-out infinite alternate;
+  width: 400px;
+  height: 400px;
+}
+
+@keyframes pan {
+  from {
+    transform: translate3d(0, 0, 0) rotate3d(1, 0, 0, 60deg) rotate3d(0, 0, 1, 40deg);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0) rotate3d(1, 0, 0, 60deg) rotate3d(0, 0, 1, 50deg);
+  }
+}
